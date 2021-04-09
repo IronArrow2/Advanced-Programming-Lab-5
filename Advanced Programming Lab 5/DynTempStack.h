@@ -9,7 +9,6 @@ template <class T>
 class DynTempStack
 {
 private:
-    //template <class T>
    class StackNode
    {
       friend class DynTempStack;

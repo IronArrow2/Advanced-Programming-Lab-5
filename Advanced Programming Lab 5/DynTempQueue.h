@@ -10,7 +10,6 @@ template <class T>
 class DynTempQueue
 {
 private:
-	//template <class T>
 	class QueueNode
 	{
       friend class DynTempQueue;
