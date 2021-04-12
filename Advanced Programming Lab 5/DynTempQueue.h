@@ -20,7 +20,7 @@ private:
          value = value1;
          next = next1;
       }
-      void printNode();
+      void printNodeRecursive();
 	};
 	// These track the front and rear of the queue
 	QueueNode *front;
@@ -129,17 +129,17 @@ void DynTempQueue<T>::printQueue()
 {
     if (!isEmpty())
     {//the printNode function requires the template data type to have an overloaded << operator in order to work
-        front->printNode();
+        front->printNodeRecursive();
     }
 }
 
 template<class T>
-void DynTempQueue<T>::QueueNode::printNode()
+void DynTempQueue<T>::QueueNode::printNodeRecursive()
 {//T must have an overloaded << operator in order for this function to work
     cout << value << " ";
     if (next != NULL)
     {
-        next->printNode();
+        next->printNodeRecursive();
     }
 }
 #endif

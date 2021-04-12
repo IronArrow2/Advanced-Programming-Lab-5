@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cstdlib>
 using namespace std;
+
 #ifndef DYNTEMPSTACK_H
 #define DYNTEMPSTACK_H
 
@@ -20,7 +21,7 @@ private:
          value = value1;
          next = next1;
        }
-      void printNode();
+      void printNodeRecursive();
    };
    StackNode *top;
 public:
@@ -79,7 +80,7 @@ void DynTempStack<T>::printStack()
 {
     if (!isEmpty())
     {//the printNode function requires the template data type to have an overloaded << operator in order to work
-        top->printNode();
+        top->printNodeRecursive();
     }
 }
 
@@ -97,12 +98,12 @@ bool DynTempStack<T>::isEmpty() const
 }
 
 template<class T>
-void DynTempStack<T>::StackNode::printNode()
+void DynTempStack<T>::StackNode::printNodeRecursive()
 {//T must have an overloaded << operator in order for this function to work
     cout << value << " ";
     if (next != NULL)
     {
-        next->printNode();
+        next->printNodeRecursive();
     }
 }
 #endif
